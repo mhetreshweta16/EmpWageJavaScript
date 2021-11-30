@@ -5,22 +5,24 @@ const IS_FullTime = 1;
 let empHrs= 0;
 let empInput = Math.floor(Math.random()*2);
 
-if (IS_FullTime == empInput)
+switch (empInput)
             {
 
-                Console.log("Employee is Present");
-                empHrs = 8;
-            }
-            else if (IS_PartTime == empInput)
-            {
+                case IS_FullTime:
+                    console.log("Employee is Present");
+                    empHrs = 8;
+                    break;
 
-                Console.log("Employee is Present");
-                empHrs = 4;
-            }
-            else {
+                case IS_PartTime:
+                    console.log("Employee is Present");
+                    empHrs = 4;
+                    break;
 
-                Console.WriteLine("Employee is Absent");
-                empHrs = 0;
+                default:
+                    console.log("Employee is Absent");
+                    empHrs = 0;
+                    break;
             }
+     
             let empWage = EmpRatePerHrs * empHrs;
-            Console.log("the Employee age is "+ empWage);
+             console.log("the Employee age is "+ empWage);
