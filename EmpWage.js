@@ -3,11 +3,13 @@ const EmpRatePerHrs= 20;
 const IS_PartTime = 2;
 const IS_FullTime = 1;
 const  Num_Of_Working_Days = 20;
-let empHrs= 0;
+const  WorkingHrs = 50;
+let empHrs = 0, totalEmpHrs = 0;
 let totalEmpWage = 0;
-
-for ( let day =1; day <= Num_Of_Working_Days; day++ )
+      let day=1;      
+            while( day <= Num_Of_Working_Days && totalEmpHrs <= WorkingHrs )
             {
+               
                 let empInput = Math.floor(Math.random()*2);
                 //Console.WriteLine(empInput);
                 switch (empInput)
@@ -28,12 +30,13 @@ for ( let day =1; day <= Num_Of_Working_Days; day++ )
                         empHrs = 0;
                         break;
                 }
-
+                
                 let empWage = EmpRatePerHrs * empHrs;
                 totalEmpWage += empWage;
                 console.log("daily Employee Wage for {0} day {1}", day, empWage);
-                
+                totalEmpHrs += empHrs;
+                day++;
             }
 
-            console.log("total employee wage is {0}",  totalEmpWage);
-   
+            console.log("total employee wage for {0} day {1} Max Work Hrs{2} ",day-1, totalEmpWage,totalEmpHrs);
+            
